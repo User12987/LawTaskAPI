@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lead form</title>
+		<style>
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				max-width: 15rem;
+				margin: auto;
+			}
+			form input,
+			textarea,
+			button {
+				font-size: 1.5rem;
+				padding: 0.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="https://lawtask.pro/API/api.php" method="post">
+			<input 
+				name="name"
+				type="text"
+				maxlength="250"
+				placeholder="name"
+			/>
+			<input
+				name="phone"
+				type="tel"
+				maxlength="30"
+				placeholder="phone"
+				required="required"
+			/>
+			<input
+				name="city"
+				type="text"
+				maxlength="70"
+				placeholder="city"
+				required="required"
+			/>
+			<textarea
+				name="situation"
+				maxlength="3500"
+				placeholder="situation"
+				required="required"
+			></textarea>
+			<input
+				name="integration_id"
+				type="hidden"
+				value="12345"
+			/>
+			<input
+				name="test"
+				type="hidden"
+				value="true"
+			/>
+			<button type="submit">submit</button>
+		</form>
+	</body>
+</html>
