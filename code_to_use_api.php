@@ -78,15 +78,14 @@ function send_lead(string $url, array $lead): array {
 		curl_close($ch);
 		return json_decode($result, true);
 	} catch (Exception $e) {
-		error_log(
-			$e->getMessage() 
+		$error_message = $e->getMessage() 
 			. ' on line ' . $e->getLine() 
-			. ' in ' . $e->getFile()
-		);
+			. ' in ' . $e->getFile();
+		error_log($error_message);
 		return [
 			'result' => false,
 			'code' => 400,
-			'reason' => $error,
+			'reason' => $error_message,
 			'data' => $lead
 		];
 	}
