@@ -1,0 +1,81 @@
+form {
+	/** Base variables **/
+	--error-color: brown;
+	--error-bg-color: #f2c6c6;
+	--success-color: rgb(5, 96, 5);
+	--success-bg-color: rgb(198, 242, 198);
+	--hint-bg-color: #fff0f0;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	max-width: 15rem;
+	margin: auto;
+}
+
+form input,
+form textarea,
+form button,
+form #result {
+	font-size: 1.5rem;
+	padding: 0.5rem;
+}
+
+form select {
+	height: 3rem;
+	padding: 0.5em;
+	font-size: 1.2em;
+}
+
+form .hidden {
+	display: none;
+}
+
+form .hint {
+	color: var(--error-color);
+	font-size: 0.8em;
+	background: var(--hint-bg-color);
+	padding: 0.5em;
+	margin-top: -1em;
+}
+
+form .error {
+	color: var(--error-color);
+	background-color: var(--error-bg-color);
+	border: var(--error-color) 1px solid;
+}
+
+form .error::placeholder {
+	color: var(--error-color);
+}
+
+form .success {
+	color: var(--success-color);
+	background-color: var(--success-bg-color);
+	border: var(--success-color) 1px solid;
+}
+
+form .success::placeholder {
+	color: var(--success-color);
+}
+
+form .spinner {
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border-left-color: #09f;
+
+	animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
