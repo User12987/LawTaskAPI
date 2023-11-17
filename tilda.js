@@ -1,5 +1,3 @@
-```js
-
 // Script to handle form actions and send lead to CRM using instructions: https://telegra.ph/API-06-17, https://help.tilda.cc/tips/javascript
 
 async function sendToCRM(form) {
@@ -41,5 +39,3 @@ if (document.readyState !== 'loading') {
 } else {
     document.addEventListener('DOMContentLoaded', initFormListener);
 }
-
-```
