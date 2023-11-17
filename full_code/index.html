@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lead form</title>
+		<link rel="stylesheet" href="./form_styles.css" />
+	</head>
+	<body>
+		<form id="leadForm" action="./send.php" method="post">
+			<input
+				name="name"
+				type="text"
+				maxlength="250"
+				placeholder="name"
+				aria-label="Name"
+				aria-describedby="nameHint"
+				aria-invalid="true"
+			/>
+			<div class="hint hidden" id="nameHint"></div>
+
+			<input
+				name="phone"
+				type="tel"
+				maxlength="30"
+				placeholder="phone"
+				aria-describedby="phoneHint"
+				aria-invalid="true"
+			/>
+			<div class="hint hidden" id="phoneHint"></div>
+
+			<select
+				id="citySelector"
+				name="city"
+				aria-describedby="cityHint"
+				aria-invalid="true"
+			>
+				<option value="" selected>Select city</option>
+				<option value="London">London</option>
+				<option value="other">Other city</option>
+			</select>
+			<div class="hint hidden" id="cityHint"></div>
+
+			<textarea
+				name="situation"
+				maxlength="3500"
+				placeholder="situation"
+				aria-describedby="situationHint"
+				aria-invalid="true"
+			></textarea>
+			<div class="hint hidden" id="situationHint"></div>
+
+			<input name="integration_id" type="hidden" value="12345" />
+			<input name="test" type="hidden" value="true" />
+			<button type="submit">submit</button>
+			<div
+				id="result"
+				class="hidden"
+				role="status"
+				aria-live="polite"
+			></div>
+			<div
+				id="spinner"
+				class="spinner hidden"
+				role="alert"
+				aria-live="assertive"
+			></div>
+		</form>
+		<script src="./form_actions.js" defer></script>
+	</body>
+</html>
